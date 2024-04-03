@@ -12,7 +12,7 @@ public class AudioMixerScript : MonoBehaviour
 
     private void Start()
     {
-        if (PlayerPrefs.HasKey("Volume"))
+        if (PlayerPrefs.HasKey("musicVolume"))
         {
             LoadVolume();
         }
@@ -25,7 +25,7 @@ public class AudioMixerScript : MonoBehaviour
     public void SetVolume()
     {
         float volume = mySlider.value;
-        myMixer.SetFloat("Volume", Mathf.Log10(volume)*20);
+        myMixer.SetFloat("music", Mathf.Log10(volume)*20);
         PlayerPrefs.SetFloat("musicVolume", volume);
     }
 
