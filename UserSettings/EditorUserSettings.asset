@@ -12,7 +12,11 @@ EditorUserSettings:
       value: 5a55045001530f0358590921167708444f4e4e722e2d76672c2b4f31b4b36069
       flags: 0
     RecentlyUsedSceneGuid-2:
+<<<<<<< HEAD
       value: 07095103515008590b0d5c271270084417151a7d757127607e2a4867e0b4616f
+=======
+      value: 015303070156080c08085f7716260d4415151c2e7e7f75312b2c1b63e7b3376f
+>>>>>>> feat/level-1
       flags: 0
     RecentlyUsedSceneGuid-3:
       value: 5a08035103510a58555c0d7349275a4441154b7f747b7333797c1f6be6e53669
