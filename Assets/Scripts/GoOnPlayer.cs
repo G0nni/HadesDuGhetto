@@ -42,7 +42,7 @@ public class GoOnPlayer : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Player reference not set in GoOnPlayer script!");
+            UnityEngine.Debug.LogError("Player reference not set in GoOnPlayer script!");
             Destroy(gameObject);
         }
     }
@@ -70,8 +70,8 @@ public class GoOnPlayer : MonoBehaviour
     {
         if (animator != null)
         {
-            bool isWalking = (player != null && mouseMovement != null && mouseMovement.magnitude > 0);
-            animator.SetBool(ANIMATOR_IS_WALKING_PARAM, isWalking);
+            bool isWalking = (player != null && mouseMovement != null);
+            animator.SetBool("isWalking", isWalking);
         }
     }
 
