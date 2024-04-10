@@ -23,6 +23,8 @@ public class MouseMovement : MonoBehaviour
     public Transform shotspawn;
     public float fireRate = 1;
 
+    public GameObject circlePrefab;
+
     // Private
     private float h;
     private float v;
@@ -32,6 +34,8 @@ public class MouseMovement : MonoBehaviour
     private int m_HashMeleeAttack = Animator.StringToHash("MeleeAttack");
     private int m_InputDetected = Animator.StringToHash("InputDetected");
     private bool isGrounded;
+    // Stocke une référence au cercle actuellement affiché
+    private GameObject currentCircle;
 
 
     void Start()
@@ -58,7 +62,17 @@ public class MouseMovement : MonoBehaviour
             {
                 agent.SetDestination(hit.point);
                 transform.LookAt(hit.point);
+
+                // Instancier un nouveau cercle à la position cliquée
+                ShowCircle(hit.point);
             }
+        }
+
+        // Vérifie si le personnage est arrivé à destination
+        if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
+        {
+            // Le personnage est arrivé à destination, détruit le cercle
+            Destroy(currentCircle);
         }
 
         // Attaque
@@ -103,8 +117,28 @@ public class MouseMovement : MonoBehaviour
         }
 
 
+
+
+
+        
+
+
     }
-    
+
+    // Méthode pour afficher le cercle à une position donnée
+    private void ShowCircle(Vector3 position)
+    {
+        // Si un cercle est déjà affiché, le détruire
+        if (currentCircle != null)
+        {
+            Destroy(currentCircle);
+        }
+
+        // Instancier un nouveau cercle à la position donnée
+        currentCircle = Instantiate(circlePrefab);
+        currentCircle.GetComponent<CircleIndicator>().Show(position);
+    }
+
 }
 
 

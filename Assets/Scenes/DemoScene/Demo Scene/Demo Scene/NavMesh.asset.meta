@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: d8c0344505eabea4ea3ee646409b6b8b
+=======
+guid: 5c4abdd2c04b2694884cf304b0171d85
+>>>>>>> feat/addcircle
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 0
