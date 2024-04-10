@@ -1,59 +1,84 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class GoOnPlayer : MonoBehaviour
 {
+    [Header("Player")]
     public GameObject player;
 
-    Vector3 targetPosition = new Vector3(0, 0, 0);
-
-    float slowingDistance = 10f;
-
+    [Header("Movement")]
     public float speed = 3f;
+    public float slowingDistance = 10f;
 
+    [Header("Health")]
     public int maxHealth = 100;
+
     private int currentHealth;
-
     private MouseMovement mouseMovement;
+    private Animator animator;
 
-    // Start is called before the first frame update
+
     void Start()
     {
-        player = GameObject.FindWithTag("Player");
-
-        currentHealth = maxHealth;
-
-        targetPosition = player.transform.position;
-
-        mouseMovement = player.GetComponent<MouseMovement>();
+        Initialize();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        targetPosition = player.transform.position;
+        UpdatePosition();
+        UpdateAnimator();
+        CheckHealth();
+    }
 
-        transform.LookAt(player.transform);
-
-        // Calculer la distance entre l'ennemi et sa position cible
-        float distance = Vector3.Distance(transform.position, targetPosition);
-
-        // Calculer la vitesse de déplacement en fonction de la distance restante
-        float currentSpeed = speed;
-        if (distance < slowingDistance)
+    void Initialize()
+    {
+        if (player != null)
         {
-            currentSpeed = distance / slowingDistance * speed;
+            currentHealth = maxHealth;
+            animator = GetComponent<Animator>();
+            mouseMovement = player.GetComponent<MouseMovement>();
         }
+        else
+        {
+            Debug.LogError("Player reference not set in GoOnPlayer script!");
+            Destroy(gameObject);
+        }
+    }
 
-        // Appliquer la vitesse de déplacement à la position de l'ennemi
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, currentSpeed * Time.deltaTime);
+    void UpdatePosition()
+    {
+        if (player != null)
+        {
+            Vector3 targetPosition = player.transform.position;
+            transform.LookAt(targetPosition);
 
+            float distance = Vector3.Distance(transform.position, targetPosition);
+            float currentSpeed = (distance < slowingDistance) ? distance / slowingDistance * speed : speed;
+
+            Vector3 movement = targetPosition - transform.position;
+            if (movement.magnitude > 0)
+            {
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), 0.15f);
+                transform.Translate(movement.normalized * currentSpeed * Time.deltaTime, Space.World);
+            }
+        }
+    }
+
+    void UpdateAnimator()
+    {
+        if (animator != null)
+        {
+            bool isWalking = (player != null && mouseMovement != null && mouseMovement.magnitude > 0);
+            animator.SetBool(ANIMATOR_IS_WALKING_PARAM, isWalking);
+        }
+    }
+
+    void CheckHealth()
+    {
         if (currentHealth <= 0)
         {
-
-            
-            
             Destroy(gameObject);
         }
     }
