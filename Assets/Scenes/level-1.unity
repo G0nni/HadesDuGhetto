@@ -2375,8 +2375,8 @@ MonoBehaviour:
   - {fileID: 618609409}
   - {fileID: 1817300594}
   - {fileID: 618609409}
-  spawnInterval: 5
-  maxMobs: 20
+  spawnInterval: 1
+  maxMobs: 10
 --- !u!4 &375025362
 Transform:
   m_ObjectHideFlags: 0
@@ -6782,6 +6782,7 @@ GameObject:
   - component: {fileID: 1154309861}
   - component: {fileID: 1154309860}
   - component: {fileID: 1154309859}
+  - component: {fileID: 1154309862}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -6839,6 +6840,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1154309862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154309858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd5630f08e5aba341a2548a75b515897, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreThreshold: 100
 --- !u!4 &1168617889 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400002, guid: 282ee397f4a5bd8458d1ac4bbaaf2d3a, type: 3}
