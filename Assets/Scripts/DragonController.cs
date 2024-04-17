@@ -31,6 +31,7 @@ public class DragonController : MonoBehaviour
     private void Start()
     {
         // Initialisation du script
+        player = GameObject.FindGameObjectWithTag("Player");
         Initialize();
     }
 
