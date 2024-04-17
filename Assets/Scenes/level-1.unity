@@ -2058,7 +2058,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -369, y: 322.5}
+  m_AnchoredPosition: {x: -212, y: 156}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &315773498
@@ -2348,6 +2348,7 @@ GameObject:
   m_Component:
   - component: {fileID: 375025362}
   - component: {fileID: 375025361}
+  - component: {fileID: 375025363}
   m_Layer: 0
   m_Name: mobManager
   m_TagString: Untagged
@@ -2394,6 +2395,19 @@ Transform:
   - {fileID: 563900707}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &375025363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 375025360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd5630f08e5aba341a2548a75b515897, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreThreshold: 100
 --- !u!4 &381596977 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 405050, guid: 594dcc63731a7e343860ac97e5332c85, type: 3}
@@ -8151,7 +8165,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1360013927}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4721b2462a2d5ec41b746ff3a9641044, type: 3}

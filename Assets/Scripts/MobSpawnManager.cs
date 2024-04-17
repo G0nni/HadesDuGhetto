@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class MobSpawnManager : MonoBehaviour
 {
@@ -39,10 +40,12 @@ public class MobSpawnManager : MonoBehaviour
                     Instantiate(mobPrefab, hit.position, Quaternion.identity);
                     currentMobs++;
                 }
-            }
+            } 
 
             // Attendre l'intervalle de spawn
             yield return new WaitForSeconds(spawnInterval);
+
+           
         }
     }
 

@@ -2283,6 +2283,9 @@ MonoBehaviour:
   damagePerHit: 50
   attackRange: 2
   attackCooldown: 1.5
+  scoreText: {fileID: 0}
+  score: 0
+  test: {fileID: 0}
 --- !u!65 &4305735121545521923
 BoxCollider:
   m_ObjectHideFlags: 0
