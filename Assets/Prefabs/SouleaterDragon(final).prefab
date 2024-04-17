@@ -1373,7 +1373,7 @@ MonoBehaviour:
   slowingDistance: 10
   maxHealth: 100
   damagePerHit: 50
-  attackRange: 2
+  attackRange: 4
   attackCooldown: 1.5
 --- !u!54 &5194051291207956689
 Rigidbody:

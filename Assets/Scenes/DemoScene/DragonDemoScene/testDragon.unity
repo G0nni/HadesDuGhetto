@@ -292,6 +292,67 @@ CapsuleCollider:
   m_Height: 1.5201457
   m_Direction: 2
   m_Center: {x: 0.02366501, y: 0.007935077, z: 0.26007283}
+--- !u!1001 &580524686
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5517878563107905818, guid: 5752f1800828d604092270078518bee5, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 7051159114799241977, guid: e7e05febfe949864f8905a1039120756, type: 3}
+    - target: {fileID: 7178387680145248230, guid: 5752f1800828d604092270078518bee5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.84241486
+      objectReference: {fileID: 0}
+    - target: {fileID: 7178387680145248230, guid: 5752f1800828d604092270078518bee5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 25.654
+      objectReference: {fileID: 0}
+    - target: {fileID: 7178387680145248230, guid: 5752f1800828d604092270078518bee5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -28.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7178387680145248230, guid: 5752f1800828d604092270078518bee5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7178387680145248230, guid: 5752f1800828d604092270078518bee5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7178387680145248230, guid: 5752f1800828d604092270078518bee5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7178387680145248230, guid: 5752f1800828d604092270078518bee5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7178387680145248230, guid: 5752f1800828d604092270078518bee5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7178387680145248230, guid: 5752f1800828d604092270078518bee5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 7178387680145248230, guid: 5752f1800828d604092270078518bee5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7927279808256313656, guid: 5752f1800828d604092270078518bee5, type: 3}
+      propertyPath: m_Name
+      value: NightmareDragon(final)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5752f1800828d604092270078518bee5, type: 3}
 --- !u!1 &781925670
 GameObject:
   m_ObjectHideFlags: 0
@@ -1013,3 +1074,4 @@ SceneRoots:
   - {fileID: 7049461088493055156}
   - {fileID: 3490184505323002203}
   - {fileID: 175179965822290220}
+  - {fileID: 580524686}
