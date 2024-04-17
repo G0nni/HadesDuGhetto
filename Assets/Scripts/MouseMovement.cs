@@ -43,6 +43,9 @@ public class MouseMovement : MonoBehaviour
         // Set sur le sol true
         anim.SetBool("Grounded", true);
         anim.Update(0);
+
+        // Initialisation du score
+        PlayerPrefs.SetInt("PlayerScore", 0);
     }
 
     void Update()

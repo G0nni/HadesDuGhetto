@@ -1,7 +1,9 @@
 using System.CodeDom;
 using System.Collections;
 using System.Diagnostics;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Animator))]
 public class DragonController : MonoBehaviour
@@ -22,6 +24,10 @@ public class DragonController : MonoBehaviour
     [SerializeField] private float attackRange = 2f;
     [SerializeField] private float attackCooldown = 1.5f;
 
+    [Header("Score")]
+    [SerializeField] public Text scoreText;
+    [SerializeField] private int score;
+    [SerializeField] private GameObject test;
     // Private
     private float lastAttackTime = 0;
     private int currentHealth;
@@ -30,8 +36,16 @@ public class DragonController : MonoBehaviour
 
     private void Start()
     {
-        // Initialisation du script
+        // Récupération des références aux objets
         player = GameObject.FindGameObjectWithTag("Player");
+
+        // Récupération de la référence du score
+        scoreText = GameObject.FindGameObjectWithTag("Score").GetComponent<Text>();
+
+        // Affichage du score
+        scoreText.text = "Score: " + PlayerPrefs.GetInt("PlayerScore", 0);
+
+        // Initialisation du script
         Initialize();
     }
 
@@ -144,6 +158,7 @@ public class DragonController : MonoBehaviour
     {
         animator.SetBool("isDie", true);
         yield return new WaitForSecondsRealtime(4);
+        IncrementScore(10);
         Destroy(gameObject);
     }
 
@@ -166,5 +181,17 @@ public class DragonController : MonoBehaviour
     {
         animator.SetBool("isAttack", true);
         lastAttackTime = Time.time;
+    }
+
+    // Méthode pour l'incrémentation du score
+    private void IncrementScore(int amount)
+    {
+        score = PlayerPrefs.GetInt("PlayerScore", 0);
+        score += amount;
+        PlayerPrefs.SetInt("PlayerScore", score);
+
+        scoreText.text = "Score: " + score;  // Mettez à jour l'affichage du score ici
+
+        UnityEngine.Debug.Log("Score updated: " + score);
     }
 }
