@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class MouseMovement : MonoBehaviour
 {
+    // Variables
     [Header("Agent")]
     public UnityEngine.AI.NavMeshAgent agent;
 
@@ -34,7 +35,6 @@ public class MouseMovement : MonoBehaviour
     private int m_HashMeleeAttack = Animator.StringToHash("MeleeAttack");
     private int m_InputDetected = Animator.StringToHash("InputDetected");
     private bool isGrounded;
-    // Stocke une référence au cercle actuellement affiché
     private GameObject currentCircle;
 
 
@@ -47,17 +47,21 @@ public class MouseMovement : MonoBehaviour
 
     void Update()
     {
+        // Vérifie si le personnage est sur le sol
         agent.speed = vitesseDeplacement;
 
+        // Attaque
         anim.ResetTrigger(m_HashMeleeAttack);
         anim.SetBool(m_InputDetected, false);
 
         // Déplacement
         if (Input.GetMouseButtonDown(1))
         {
+            // Déplacement du personnage
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
+            // Si le rayon touche un objet
             if (Physics.Raycast(ray, out hit))
             {
                 agent.SetDestination(hit.point);
@@ -78,22 +82,29 @@ public class MouseMovement : MonoBehaviour
         // Attaque
         if (Input.GetMouseButtonDown(0) && Time.time >= nextFireTime)
         {
+            // Attaque
             RaycastHit hit2;
             Ray ray2 = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            // Si le rayon touche un objet
             if (Physics.Raycast(ray2, out hit2))
             {
                 transform.LookAt(hit2.point);
             }
             
+            // Animation
             anim.SetBool(m_InputDetected, true);
             anim.SetTrigger(m_HashMeleeAttack);
 
+            // Tir
             Vector3 direction = (hit2.point - transform.position).normalized;
             Quaternion rotation = Quaternion.LookRotation(direction);
 
+            // Création du projectile
             GameObject bullet = Instantiate(shot, shotspawn.position, rotation) as GameObject;
             bullet.GetComponent<Mover>().playerTransform = transform;
 
+            // Prochain tir
             nextFireTime = Time.time + fireRate;
         }
 
@@ -104,9 +115,11 @@ public class MouseMovement : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
         }
 
+        // Movement
         float distanceToDestination = Vector3.Distance(transform.position, agent.destination);
         float speed = agent.velocity.magnitude / agent.speed;
 
+        // Animation de déplacement
         if (distanceToDestination > 0.1f)
         {
             anim.SetFloat("ForwardSpeed", speed);   
@@ -115,14 +128,6 @@ public class MouseMovement : MonoBehaviour
         {
             anim.SetFloat("ForwardSpeed", 0);
         }
-
-
-
-
-
-        
-
-
     }
 
     // Méthode pour afficher le cercle à une position donnée

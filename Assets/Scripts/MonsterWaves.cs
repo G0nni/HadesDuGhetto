@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MonsterWaves : MonoBehaviour
 {
+
     public GameObject Monster1;
 
     public float spawnLimitUp = -50;

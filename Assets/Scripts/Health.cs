@@ -4,17 +4,23 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
+    // Variables
+    [Header("Vie")]
     public float maxHealth = 100f;
     public float currentHealth;
+
+    [Header("Damage")]
     public int damageAmount = 10;
 
     void Start()
     {
+        // Initialisation de la santé
         currentHealth = maxHealth;
     }
 
     void OnTriggerEnter(Collider other)
     {
+        // Si le joueur entre en collision avec un ennemi, il perd de la vie
         if (other.gameObject.CompareTag("Enemy"))
         {
             currentHealth -= damageAmount;
@@ -22,8 +28,10 @@ public class Health : MonoBehaviour
         }
     }
 
+    // Fonction pour infliger des dégâts au joueur
     public void TakeDamage(float damage)
     {
+        // Si le joueur prend des dégâts, on les applique à sa santé
         currentHealth -= damage;
         if (currentHealth <= 0)
         {

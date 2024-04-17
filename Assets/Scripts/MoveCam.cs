@@ -2,11 +2,13 @@ using UnityEngine;
 
 public class MoveCam : MonoBehaviour
 {
+    // Variables
+    [Header("Vitesse")]
     public float speed = 10.0f;
 
-    // Update is called once per frame
     void Update()
     {
+        // Déplacement de la caméra
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
 

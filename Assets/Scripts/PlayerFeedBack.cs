@@ -6,32 +6,31 @@ using UnityEngine.UI;//a ajouter
 
 public class PlayerFeedBack : MonoBehaviour
 {
+    // Variables
+    [Header("Text")]
     public GameObject gameOverText;
     public Text scoreText;
 
     private bool gameover = false;
     private int score = 0;
 
-    // Start is called before the first frame update
     void Start()
     {
+        // Initialisation
         gameOverText.SetActive(false);
         
+        // Initialisation du score
         scoreText.text = "Points : 0";
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    // Game Over
     public void GameOver()
     {
         gameover = true;
         gameOverText.SetActive(true);
     }
 
+    // Score
     public void scoreUpdate(int points)
     {
         score += points;
@@ -39,21 +38,25 @@ public class PlayerFeedBack : MonoBehaviour
         
     }
 
+    // Restart Game
     public void RestartGame()
     {
         SceneManager.LoadScene(1);
     }
 
+    // Relance le jeu
     public void StartGame()
     {
         SceneManager.LoadScene(1);
     }
 
+    // Retour au menu
     public void ReturnTitleScreen()
     {
         SceneManager.LoadScene(0);
     }
 
+    // Quitter le jeu
     public void QuitGame()
     {
         Application.Quit();

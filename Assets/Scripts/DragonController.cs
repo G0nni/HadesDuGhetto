@@ -6,6 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class DragonController : MonoBehaviour
 {
+    //Variables
     [Header("Player")]
     [SerializeField] private GameObject player;
 
@@ -27,13 +28,12 @@ public class DragonController : MonoBehaviour
     private MouseMovement mouseMovement;
     private Animator animator;
 
-    // Start is called before the first frame update
     private void Start()
     {
+        // Initialisation du script
         Initialize();
     }
 
-    // Update is called once per frame
     private void Update()
     {
         // Si la santé du dragon est inférieure ou égale à 0, on le tue

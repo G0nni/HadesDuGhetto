@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class CircleIndicator : MonoBehaviour
 {
-
+    // Variables
+    [Header("Duration")]
     public float displayDuration = 1.0f;
 
     // Méthode pour afficher le cercle à une position donnée

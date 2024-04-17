@@ -4,32 +4,32 @@ using UnityEngine;
 
 public class DestroyByContact : MonoBehaviour
 {
+    //Variables
+    [Header("Score")]
     public int scoreValue = 50;
+    private GameObject objetRecherche;
+    private PlayerFeedBack objetRechercheScript;
 
-
-    private GameObject objetRecherche;//pour stocker la ref de mon gamecontroller
-    private PlayerFeedBack objetRechercheScript;//pour stocker la ref du scripf associé
-    // Start is called before the first frame update
+    
     void Start()
     {
+        // Recherche l'objet avec le tag GameController
         objetRecherche = GameObject.FindWithTag("GameController");
+
+        // Récupère le script PlayerFeedBack de l'objet trouvé
         objetRechercheScript = objetRecherche.GetComponent<PlayerFeedBack>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     void OnTriggerEnter(Collider other)
     {
-
+        // Si l'objet entre en collision avec un ennemi alors il est détruit
         if (other.tag == "Player")
         {
             objetRechercheScript.GameOver();
             Destroy(other.gameObject);
         }
+
+        // Si l'objet entre en collision avec un ennemi alors il est détruit
         if (other.tag == "Bullet")
         {
             objetRechercheScript.scoreUpdate(scoreValue);

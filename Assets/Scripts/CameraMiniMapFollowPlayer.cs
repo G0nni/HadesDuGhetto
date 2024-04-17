@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class CameraMiniMapFollowPlayer : MonoBehaviour
 {
-    public GameObject player; // Référence au GameObject du joueur
+    // Variables
+    [Header("Player")]
+    public GameObject player;
+    private Vector3 offset;
 
-    private Vector3 offset; // Offset entre la caméra et le joueur
-
-    // Start is called before the first frame update
+    
     void Start()
     {
+        // Calcul de la distance entre la caméra et le joueur
         offset = transform.position - player.transform.position;
     }
 
     private void LateUpdate()
     {
+        // Mise à jour de la position de la caméra
         transform.position = player.transform.position + offset;
     }
 }
