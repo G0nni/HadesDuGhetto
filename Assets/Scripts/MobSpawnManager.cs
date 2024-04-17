@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class MobSpawnManager : MonoBehaviour
 {
-    public GameObject mobPrefab; // Le prefab du mob à spawner
+    public GameObject[] mobPrefabs; // Liste des prefabs de mobs à spawner
     public Transform[] spawnPoints; // Les points de spawn des mobs
     public float spawnInterval = 3f; // Intervalle entre chaque spawn
     public int maxMobs = 10; // Nombre maximal de mobs à la fois
@@ -27,6 +27,9 @@ public class MobSpawnManager : MonoBehaviour
             {
                 // Choisir un point de spawn aléatoire
                 Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
+
+                // Choisir un prefab de mob aléatoire
+                GameObject mobPrefab = mobPrefabs[Random.Range(0, mobPrefabs.Length)];
 
                 // Vérifier si le point de spawn est sur la surface de la nav mesh
                 NavMeshHit hit;

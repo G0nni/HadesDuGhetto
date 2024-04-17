@@ -2367,11 +2367,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06af4675aa972a9468b958b8fdf05617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mobPrefab: {fileID: 5279955579724145384, guid: 4901df25f2d32064aa5de99469bbba2d, type: 3}
+  mobPrefabs:
+  - {fileID: 7927279808256313656, guid: 5752f1800828d604092270078518bee5, type: 3}
+  - {fileID: 5279955579724145384, guid: 4901df25f2d32064aa5de99469bbba2d, type: 3}
   spawnPoints:
   - {fileID: 618609409}
-  spawnInterval: 3
-  maxMobs: 10
+  - {fileID: 1817300594}
+  - {fileID: 618609409}
+  spawnInterval: 5
+  maxMobs: 20
 --- !u!4 &375025362
 Transform:
   m_ObjectHideFlags: 0
@@ -2386,6 +2390,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 618609409}
+  - {fileID: 1817300594}
+  - {fileID: 563900707}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &381596977 stripped
@@ -3671,6 +3677,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf836fe3592a9474b9d3fd72788a1e65, type: 3}
+--- !u!1 &563900706
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 563900707}
+  m_Layer: 0
+  m_Name: mobSpawn3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &563900707
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563900706}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -6.11, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 375025362}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &571129156
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10799,6 +10836,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5ddc8ef23d715245ae97842531893a9, type: 3}
+--- !u!1 &1817300593
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1817300594}
+  m_Layer: 0
+  m_Name: mobSpawn2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1817300594
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817300593}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -6.11, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 375025362}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1819637249
 PrefabInstance:
   m_ObjectHideFlags: 0
