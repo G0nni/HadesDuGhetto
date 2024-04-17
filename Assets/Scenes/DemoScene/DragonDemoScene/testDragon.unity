@@ -181,6 +181,7 @@ MonoBehaviour:
   shot: {fileID: 4802303635115996012, guid: 880e4777d93ceba45b7c16dee06de323, type: 3}
   shotspawn: {fileID: 2074923854}
   fireRate: 1
+  circlePrefab: {fileID: 0}
 --- !u!195 &305195085
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -810,6 +811,67 @@ Transform:
   m_Children: []
   m_Father: {fileID: 305195092}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &175179965822290220
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2996425777542262781, guid: 4901df25f2d32064aa5de99469bbba2d, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 305195083}
+    - target: {fileID: 5279955579724145384, guid: 4901df25f2d32064aa5de99469bbba2d, type: 3}
+      propertyPath: m_Name
+      value: SouleaterDragon(animated)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7437827945886621694, guid: 4901df25f2d32064aa5de99469bbba2d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.5986922
+      objectReference: {fileID: 0}
+    - target: {fileID: 7437827945886621694, guid: 4901df25f2d32064aa5de99469bbba2d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 25.653997
+      objectReference: {fileID: 0}
+    - target: {fileID: 7437827945886621694, guid: 4901df25f2d32064aa5de99469bbba2d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -22.457226
+      objectReference: {fileID: 0}
+    - target: {fileID: 7437827945886621694, guid: 4901df25f2d32064aa5de99469bbba2d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7437827945886621694, guid: 4901df25f2d32064aa5de99469bbba2d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7437827945886621694, guid: 4901df25f2d32064aa5de99469bbba2d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7437827945886621694, guid: 4901df25f2d32064aa5de99469bbba2d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7437827945886621694, guid: 4901df25f2d32064aa5de99469bbba2d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7437827945886621694, guid: 4901df25f2d32064aa5de99469bbba2d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 7437827945886621694, guid: 4901df25f2d32064aa5de99469bbba2d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4901df25f2d32064aa5de99469bbba2d, type: 3}
 --- !u!1001 &3490184505323002203
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -865,6 +927,10 @@ PrefabInstance:
     - target: {fileID: 7927279808256313656, guid: 5752f1800828d604092270078518bee5, type: 3}
       propertyPath: m_Name
       value: NightmareDragon(animated)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7927279808256313656, guid: 5752f1800828d604092270078518bee5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -946,3 +1012,4 @@ SceneRoots:
   - {fileID: 796954539}
   - {fileID: 7049461088493055156}
   - {fileID: 3490184505323002203}
+  - {fileID: 175179965822290220}
