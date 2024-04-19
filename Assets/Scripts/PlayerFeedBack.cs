@@ -26,6 +26,7 @@ public class PlayerFeedBack : MonoBehaviour
     // Restart Game
     public void RestartGame()
     {
+        UnityEngine.Debug.Log("Restart Game");
         SceneManager.LoadScene(1);
     }
 

@@ -12,6 +12,8 @@ public class Health : MonoBehaviour
     [Header("Damage")]
     public int damageAmount = 5;
 
+    PlayerFeedBack script;
+
     void Start()
     {
         // Initialisation de la santé
@@ -20,6 +22,7 @@ public class Health : MonoBehaviour
 
     private void Update()
     {
+        // Si la santé du joueur est inférieure ou égale à 0, le joueur meurt
         if (currentHealth <= 0)
         {
             Die();
@@ -38,7 +41,10 @@ public class Health : MonoBehaviour
 
     void Die()
     {
-        GameObject.FindGameObjectWithTag("Event").GetComponent<PlayerFeedBack>().GameOver();
+        // Le joueur meurt
+        UnityEngine.Debug.Log("Player is dead");
+        script = FindObjectOfType<PlayerFeedBack>();
+        script.GameOver();
         Destroy(gameObject);
     }
 }
