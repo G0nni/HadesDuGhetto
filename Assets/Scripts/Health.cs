@@ -10,12 +10,20 @@ public class Health : MonoBehaviour
     public float currentHealth;
 
     [Header("Damage")]
-    public int damageAmount = 10;
+    public int damageAmount = 5;
 
     void Start()
     {
         // Initialisation de la santé
         currentHealth = maxHealth;
+    }
+
+    private void Update()
+    {
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
     }
 
     void OnTriggerEnter(Collider other)
@@ -28,19 +36,9 @@ public class Health : MonoBehaviour
         }
     }
 
-    // Fonction pour infliger des dégâts au joueur
-    public void TakeDamage(float damage)
-    {
-        // Si le joueur prend des dégâts, on les applique à sa santé
-        currentHealth -= damage;
-        if (currentHealth <= 0)
-        {
-            Die();
-        }
-    }
-
     void Die()
     {
-        // action à effectuer lorsque le personnage meurt (par exemple, afficher un message Game Over)
+        GameObject.FindGameObjectWithTag("Event").GetComponent<PlayerFeedBack>().GameOver();
+        Destroy(gameObject);
     }
 }

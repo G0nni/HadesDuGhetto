@@ -54,7 +54,6 @@ public class DragonController : MonoBehaviour
         // Si la santé du dragon est inférieure ou égale à 0, on le tue
         if (currentHealth <= 0)
         {
-            UnityEngine.Debug.Log("Dragon is dead!");
             StartCoroutine(Die()); 
         }
 

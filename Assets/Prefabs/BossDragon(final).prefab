@@ -309,7 +309,7 @@ GameObject:
   - component: {fileID: 4930447966380635058}
   m_Layer: 0
   m_Name: BossDragon(final)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -371,6 +371,9 @@ MonoBehaviour:
   damagePerHit: 50
   attackRange: 2
   attackCooldown: 1.5
+  scoreText: {fileID: 0}
+  score: 0
+  test: {fileID: 0}
 --- !u!54 &7042085034317854063
 Rigidbody:
   m_ObjectHideFlags: 0

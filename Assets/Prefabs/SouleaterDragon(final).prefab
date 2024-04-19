@@ -1313,7 +1313,7 @@ GameObject:
   - component: {fileID: 5694361638189544615}
   m_Layer: 0
   m_Name: SouleaterDragon(final)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1375,6 +1375,9 @@ MonoBehaviour:
   damagePerHit: 50
   attackRange: 4
   attackCooldown: 1.5
+  scoreText: {fileID: 0}
+  score: 0
+  test: {fileID: 0}
 --- !u!54 &5194051291207956689
 Rigidbody:
   m_ObjectHideFlags: 0

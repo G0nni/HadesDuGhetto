@@ -32,7 +32,6 @@ public class DestroyByContact : MonoBehaviour
         // Si l'objet entre en collision avec un ennemi alors il est détruit
         if (other.tag == "Bullet")
         {
-            objetRechercheScript.scoreUpdate(scoreValue);
             Destroy(other.gameObject);
             Destroy(gameObject);
         }

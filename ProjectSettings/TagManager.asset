@@ -8,6 +8,8 @@ TagManager:
   - Weapon
   - Ground
   - Score
+  - Enemy
+  - Event
   - Enemies
   layers:
   - Default
