@@ -34,10 +34,15 @@ public class DragonController : MonoBehaviour
     private MouseMovement mouseMovement;
     private Animator animator;
 
+ 
+
     private void Start()
     {
         // Récupération des références aux objets
         player = GameObject.FindGameObjectWithTag("Player");
+
+      
+        
 
         // Récupération de la référence du score
         scoreText = GameObject.FindGameObjectWithTag("Score").GetComponent<Text>();
@@ -158,6 +163,10 @@ public class DragonController : MonoBehaviour
         animator.SetBool("isDie", true);
         yield return new WaitForSecondsRealtime(4);
         IncrementScore(10);
+
+
+        
+
         Destroy(gameObject);
     }
 
@@ -192,5 +201,10 @@ public class DragonController : MonoBehaviour
         scoreText.text = "Score: " + score;  // Mettez à jour l'affichage du score ici
 
         UnityEngine.Debug.Log("Score updated: " + score);
+    }
+
+    public int getCurrentHealth()
+    {
+        return currentHealth;
     }
 }
