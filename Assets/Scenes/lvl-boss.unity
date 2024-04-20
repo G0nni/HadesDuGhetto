@@ -2448,6 +2448,23 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 594dcc63731a7e343860ac97e5332c85, type: 3}
+--- !u!1 &491878015 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 399657966651291943, guid: 74cd2d9e5535ef345b056cfc002755a4, type: 3}
+  m_PrefabInstance: {fileID: 1798955058}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &491878021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491878015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad0a35e06c226854a9a73ca2e7271a88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &492527676 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 405050, guid: e5ddc8ef23d715245ae97842531893a9, type: 3}
@@ -8423,7 +8440,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 927631550081979040, guid: 74cd2d9e5535ef345b056cfc002755a4, type: 3}
       propertyPath: maxHealth
-      value: 50
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 927631550081979040, guid: 74cd2d9e5535ef345b056cfc002755a4, type: 3}
       propertyPath: attackRange
@@ -8472,7 +8489,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 399657966651291943, guid: 74cd2d9e5535ef345b056cfc002755a4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 491878021}
   m_SourcePrefab: {fileID: 100100000, guid: 74cd2d9e5535ef345b056cfc002755a4, type: 3}
 --- !u!1001 &1804995751
 PrefabInstance:
